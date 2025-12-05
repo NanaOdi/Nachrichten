@@ -1,0 +1,89 @@
+/* Basis-Einstellungen der Seite */
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 0;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+/* Hauptgrid für die komplette Zeitungsseite */
+.newspaper-layout {
+    display: grid;
+
+    /* Grid-Bereiche definieren */
+    grid-template-areas:
+        "title title title"
+        "feature-article feature-article cover-image"
+        "secondary-article secondary-article cover-image"
+        "small-article1 small-article2 small-article3";
+
+    grid-template-columns: 1fr 1fr 1fr; /* 3 gleich breite Spalten */
+    grid-template-rows: auto 1fr 1fr 1fr; /* flexible Zeilenhöhen */
+
+    gap: 15px;           /* Abstand zwischen den Elementen */
+    padding: 15px;       /* Abstand innen */
+    background-color: #ffffff; /* Weißer Hintergrund für Zeitungseffekt */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify; /* Zeitungstypischer Blocksatz */
+}
+
+/* Titelbereich */
+.title {
+    grid-area: title;
+    background-color: #1B1B32;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.title h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* Haupt- und sekundäre Artikel */
+.feature-article,
+.secondary-article {
+    background-color: #f9f9f9;
+    padding: 15px;
+    font-size: 1rem;
+}
+
+.feature-article {
+    grid-area: feature-article;
+}
+
+.secondary-article {
+    grid-area: secondary-article;
+}
+
+/* Kleine Artikel 1–3 */
+.small-article1,
+.small-article2,
+.small-article3 {
+    background-color: #e9e9e9;
+    padding: 15px;
+    font-size: 0.9rem;
+}
+
+/* Grid-Positionen für kleine Artikel */
+.small-article1 { grid-area: small-article1; }
+.small-article2 { grid-area: small-article2; }
+.small-article3 { grid-area: small-article3; }
+
+/* Bildbereich */
+.cover-image {
+    grid-area: cover-image;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    padding: 15px;
+}
+
+.cover-image img {
+    max-width: 100%;
+    height: 350px;
+    width: 350px;
+    border-radius: 5px;
+}
